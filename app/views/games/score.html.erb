@@ -1,0 +1,37 @@
+<div class="container">
+    <% if @included == true && @is_english == true %>
+    <div class="row text-center">
+      <img src="https://media0.giphy.com/media/WJjLyXCVvro2I/giphy.gif?cid=ecf05e47zw6jhkq3tuo9rbcjpa8300453rrvq80mu2dl431w&rid=giphy.gif&ct=g" class="gif text-center">
+      <h1 class="m-4">🎉 Congratulations!</h1>
+      <p>The word <%= @input %> exists!</p>
+    </div>
+    <% end %>
+
+    <% if @included == true && @is_english == false %>
+      <div class="row text-center">
+        <img src="https://media2.giphy.com/media/NpL4D3Oc2bJUMAXF9P/giphy.gif?cid=ecf05e47qi4tbd1aek8hxpytggd38fxtflk295ds07g8jwdv&rid=giphy.gif&ct=g" class="gif text-center">
+        <h1 class="m-4">😤 Crap!</h1>
+        <p>The word <%= @input %> isn't english!</p>
+      </div>
+    <% end %>
+
+    <% if @is_english == true && @included == false%>
+      <div class="row text-center">
+        <img src="https://media1.giphy.com/media/15aGGXfSlat2dP6ohs/giphy.gif?cid=ecf05e47i5rahvrugs7zeyrq665m8tdxatscd5b50e2z3944&rid=giphy.gif&ct=g" class="gif text-center">
+        <h1 class="m-4">😩 Snap!</h1>
+        <p>The word <%= @input %> doesn't belong to the grid!</p>
+      </div>
+    <% end %>
+
+    <% if @is_english == false && @included == false%>
+      <div class="row text-center">
+        <img src="https://media2.giphy.com/media/i1JSXl0MfeRd6/giphy.gif?cid=ecf05e47i5rahvrugs7zeyrq665m8tdxatscd5b50e2z3944&rid=giphy.gif&ct=g" class="gif text-center">
+        <h1 class="m-4">💩 Shit!</h1>
+        <p>The word <%= @input %> doesn't exists!</p>
+      </div>
+    <% end %>
+
+    <div class="d-inline-block my-3 p-2 text-center"><%= link_to "Replay", new_path, class:"btn btn-primary" %></div>
+  </div>
+</div>
+<!-- Booleans dans ma vue >

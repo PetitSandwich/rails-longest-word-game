@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <H1 class="text-center m-4">Welcome to the longest word game</H1>
+  </div>
+  <div class="row text-center">
+  <ul id="letters col-6 text-center">
+    <% @letter_field.each do |letter|%>
+      <li class="border p-4 letter list-inline-item rounded"><%= letter %></li>
+    <% end %>
+  </li>
+  </div>
+  <div class="row">
+    <form action="score" method="post"> <!-- Par défaut method get : change la methode en post en attribute -->
+      <label for=""></label>
+      <input name="userinput" id="userinput" class="form-control col-6" placeholder="What is your query?">
+      <input type="submit" class="btn btn-primary">
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <%= hidden_field_tag :letters, @letter_field %>
+    </form>
+  </div>
+</div>
